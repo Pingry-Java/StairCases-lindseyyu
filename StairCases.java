@@ -27,31 +27,33 @@ public class StairCases
     System.out.println("Type in an integer: ");
     int size = keyboard.nextInt();
 
+   
+
     printAscending(size);
     printDescending(size);
   }
 
-
-  public static void printAscending(int size)
-
-  {  
-       /**
-       * This method takes in an integer (size) and prints the stars in an ascending fashion
+/**
+       * This method takes in an integer (size) and prints the xs in an ascending fashion
        * @param size the number of stars we want to build up to 
        * no return statement 
        */
 
+  public static void printAscending(int size)
+
+  {  
+       
    
-    int count = 0;
+    int count = 0; //set count to 0 
     
-    for (int i = 0; i < size; i++ ){
+    for (int i = 0; i < size; i++ ){ //nested for loop, set i to 0, till i is higher than size, increment i
       count = count + 1;
 
-      for(int n = 0; n < count; n++) {
-         System.out.print("x");
+      for(int n = 0; n < count; n++) { //set n to 0, till n is higher than count, increment n 
+         System.out.print("x"); //just one char (no println)
       }
 
-      System.out.println(" ");
+      System.out.println(" "); //add new lines 
     
      }
      System.out.println(" ");
@@ -59,24 +61,24 @@ public class StairCases
      
   }
 
-
-  public static void printDescending(int size)
-
-  {
-
-     /**
+ /**
        * This method takes in an integer (size) and prints the xs in a descending fashion
        * @param size the number of stars we want to count down from 
        * no return statement 
        */
+  public static void printDescending(int size)
+
+  {
+
+    
 
     int count = (size + 1);
 
-    for (int i = 0; i < size; i++) {
+    for (int i = 0; i < size; i++) { //set i =0, until i is higher than size, increment
       
-        count = count-1;
+        count = count-1; //decrement count by 1
       
-        for (int n = 0; n <count; n++) {
+        for (int n = 0; n <count; n++) { //set n to 0, until n is higher than the count, increment
           System.out.print("x");
         }
 
