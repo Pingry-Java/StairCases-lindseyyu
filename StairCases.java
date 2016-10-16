@@ -8,7 +8,7 @@ public class StairCases
   /**
  * This class represents a program that 
  * gets an integer input from the user and prints 
- * ascending and descending staircases of 'x' characters
+ * ascending and descending staircases of 'x' characters, recursively
  * @author Lindsey Yu
  * @version 0.1
  */
@@ -30,6 +30,7 @@ public class StairCases
    
 
     printAscending(size);
+    System.out.println(" ");
     printDescending(size);
   }
 
@@ -42,48 +43,38 @@ public class StairCases
   public static void printAscending(int size)
 
   {  
-       
-   
-    int count = 0; //set count to 0 
+      if (size > 0)
+        printAscending(size-1);
+        
+      for(int n = 0; n < size; n++) { //set n to 0, till n is higher than count, increment n 
+         System.out.print("x"); //just one char (no println) 
+         }
+  
+         System.out.println(" "); 
     
-    for (int i = 0; i < size; i++ ){ //nested for loop, set i to 0, till i is higher than size, increment i
-      count = count + 1;
+  
 
-      for(int n = 0; n < count; n++) { //set n to 0, till n is higher than count, increment n 
-         System.out.print("x"); //just one char (no println)
-      }
+   } 
 
-      System.out.println(" "); //add new lines 
-    
-     }
-     System.out.println(" ");
-
-     
-  }
-
+ 
  /**
        * This method takes in an integer (size) and prints the xs in a descending fashion
        * @param size the number of stars we want to count down from 
        * no return statement 
        */
-  public static void printDescending(int size)
+  public static void printDescending(int size) //have to use tail recursion 
 
   {
-
     
 
-    int count = (size + 1);
+    for (int n = 0; n < size; n++) { //set n to 0, until n is higher than the count, increment
+       System.out.print("x");   }
 
-    for (int i = 0; i < size; i++) { //set i =0, until i is higher than size, increment
-      
-        count = count-1; //decrement count by 1
-      
-        for (int n = 0; n <count; n++) { //set n to 0, until n is higher than the count, increment
-          System.out.print("x");
-        }
+     System.out.println(" ");
 
-        System.out.println(" ");
+     if (size > 0)
+        printDescending(size-1);
     }
 
   }
-}
+
